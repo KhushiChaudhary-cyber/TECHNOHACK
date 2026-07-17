@@ -1,22 +1,16 @@
- Currency Converter
+ TechnoHacks Virtual Internship
 
-A simple and responsive Currency Converter web application built using HTML, CSS, and JavaScript during my TechnoHacks Virtual Internship. The application uses an exchange rate API to convert currencies in real time.
+This repository contains the projects completed during my **TechnoHacks Virtual Internship**, showcasing my web development skills using HTML, CSS, and JavaScript.
 
- Features
-- Real-time currency conversion
-- Supports multiple currencies
-- Responsive and user-friendly interface
+ Projects
+- ⏳ CountDown_Timer – A responsive countdown timer.
+- 🔐 Login_Signup_Page – A user authentication interface with login and signup forms.
+- 💱 Currency_Converter – A real-time currency converter using an exchange rate API.
 
  Technologies Used
-- HTML
+- HTML5
 - CSS
 - JavaScript
-- Exchange Rate API
-
- How to Run
-1. Download or clone the repository.
-2. Open `currencyconverter.html` in your browser.
-3. Enter the amount, select the currencies, and click **Convert**.
 
  Author
 Khushi Chaudhary
