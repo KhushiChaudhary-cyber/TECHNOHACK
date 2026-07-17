@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="flip" />
+      <div class="cover">
+        <div class="front">
+          <img src="backimg.jpeg" alt="" />
+          <div class="text">
+            <span class="text-1"
+              >Every new friend is a<br />
+              new adventure</span
+            >
+            <span class="text-2">Let's get connected</span>
+          </div>
+        </div>
+
+        <div class="back">
+          <img src="frontimg.jpeg" alt="" />
+          <div class="text">
+            <span class="text-1"
+              >Complete miles of journey<br />
+              with one step</span
+            >
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+
+      <form action="#">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Enter your email" required />
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+              <div class="text"><a href="#">Forget password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Submit" />
+              </div>
+              <div class="text login-text">
+                Don't have an account? <label for="flip">Signup now</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="signup-form">
+            <div class="title">Signup</div>
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter your name" required />
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Enter your email" required />
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+
+              <div class="button input-box">
+                <input type="submit" value="Submit" />
+              </div>
+              <div class="text signup-text">
+                Already have an account? <label for="flip">Login now</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.querySelector('.login-form');
+        const signupForm = document.querySelector('.signup-form');
+
+        // Function to validate email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Function to validate password
+        function validatePassword(password) {
+            return password.length >= 6; // Example: Minimum 6 characters
+        }
+
+        // Login form validation
+        loginForm.addEventListener('submit', function(event) {
+            const email = loginForm.querySelector('input[type="email"]').value;
+            const password = loginForm.querySelector('input[type="password"]').value;
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+            }
+
+            if (!validatePassword(password)) {
+                alert('Password must be at least 6 characters long.');
+                event.preventDefault();
+            }
+        });
+
+        // Signup form validation
+        signupForm.addEventListener('submit', function(event) {
+            const name = signupForm.querySelector('input[type="text"]').value;
+            const email = signupForm.querySelector('input[type="email"]').value;
+            const password = signupForm.querySelector('input[type="password"]').value;
+
+            if (name.trim() === '') {
+                alert('Name cannot be empty.');
+                event.preventDefault();
+            }
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+            }
+
+            if (!validatePassword(password)) {
+                alert('Password must be at least 6 characters long.');
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+<script src="hash.js"></script>
+
+</html>
